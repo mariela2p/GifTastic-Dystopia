@@ -1,0 +1,69 @@
+body{
+	font-family: Helvetica;
+	color:#b82d6c;
+
+}
+@font-face{
+    font-family: Resistance;
+    src: url(lockergnome.ttf); 
+}
+#title {
+	text-align: center;
+	font-size: 60px;
+	color:#a42860;
+	font-family: Resistance;
+}
+.jumbotron{
+	background-image: url("../img/crowd.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 200px;
+	border-bottom: 8px solid #a42860;
+}
+#giphy-view {
+	overflow:hidden;
+	width:100%;
+
+}
+
+#buttons-view{
+	margin-bottom: 20px
+}
+
+.newGiphy {	
+	float:left;
+	width:33%;
+	height:33%;	
+}
+img{
+	margin:5px;
+	border-radius: 7px;
+	height:200px;
+	border: 4px solid #cd3278;
+}
+.btn{
+	margin: 13px;
+	background-color: #cd3278;
+	color:white;
+
+}
+.btn:hover{
+	background-color: #b82d6c;
+	color:white;
+
+}
+#giphy-form{
+	margin-bottom: 50px;
+}
+#add-giphy{
+	margin-left: 10px;
+	background-color: #cd3278;
+	color:white;
+}
+.gif{
+	margin-bottom: 50px;
+}
+#rating{
+	font-size: 16px;
+}
