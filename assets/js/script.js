@@ -1,12 +1,14 @@
+// Initial array of animated series
 var giphys = ["Bobs Burger","Family Guy", "Rick and Morty", "Futurama", "American dad", "Bojack Horseman", "The Simpsons", " Adventure Time", "South Park"];
 
+//functoin re-renders the HTML to display the appropriate content
 function displayGiphy() {
 
     $("#giphy-view").empty();
 
     var giphy = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + giphy + "&limit=9&api_key=dc6zaTOxFJmzC";
-
+    // Creating an AJAX call for the specific movie button being clicked
     $.ajax({
         url: queryURL,
         method: 'GET'
@@ -40,14 +42,16 @@ function displayGiphy() {
     });
 }
 
+// Function for displaying data
 function renderButtons() {
 
     $("#buttons-view").empty();
-
+    
+    // Looping through the array of series
     for (var i = 0; i < giphys.length; i++) {
-
+    
+    // Dynamicaly generating buttons for each movie in the array
         var a = $("<button>");
-
         a.addClass("giphy");
         a.addClass("btn");
         a.attr("data-name", giphys[i]);
@@ -56,7 +60,7 @@ function renderButtons() {
         $("#buttons-view").append(a);
     }
 }
-
+//handles events where a series button is clicked
 $("#add-giphy").on("click", function(event) {
 
     event.preventDefault();
@@ -69,7 +73,7 @@ $("#add-giphy").on("click", function(event) {
 
 });
 
-
+// Adding a click event
 $(document).ready(function() {
 
     renderButtons();
@@ -78,7 +82,7 @@ $(document).ready(function() {
     $(document).on("click", '.gif', function() {
 
         var state = $(this).attr("data-state");
-
+        //animate the gifs and put them still 
         if (state === "still") {
             $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
